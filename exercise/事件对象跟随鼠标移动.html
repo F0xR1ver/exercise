@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+	<style>
+		#d1{
+			border-style: ridge;
+			width: 200px;
+			height: 100px;
+			background-color: greenyellow;
+			position: absolute;
+		}
+
+		#d2{
+			margin-top: 10px;
+			border-style: ridge;
+			width: 200px;
+			height: 50px;
+		}
+	</style>
+
+		<script>
+			window.onload=function(){
+				var d1 =document.getElementById("d1");
+				var d2 =document.getElementById("d2");
+				
+				document.onmousemove =function(event){
+					var x = event.pageX;
+					var y =	event.pageY;
+
+					d2.innerHTML=("x"+x+",y"+y)
+
+					d1.style.left=x+"px";
+					d1.style.top=y+"px";
+
+				}
+
+
+				
+
+
+
+			}
+		</script>
+
+
+	</head>
+	<body>
+		<div id="d1"></div>
+		<div id="d2"></div>
+	</body>
+</html>

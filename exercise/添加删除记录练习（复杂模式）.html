@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		
+		<script type="text/javascript">
+			window.onload=function(){ 
+				function myclick (a,fun){
+					var btn=document.getElementById(a);
+					btn.onclick=fun;
+				}
+				
+				
+				
+				
+			function dela(){
+				
+				var tr = this.parentNode.parentNode;
+				
+				var name = tr.getElementsByTagName("th")[0].innerHTML;
+				
+				var flag=confirm("确认要删除"+name+"吗");
+				
+				if(flag){
+					
+					tr.parentNode.removeChild(tr);
+					
+					}
+					return false;
+			}	
+				
+				
+				
+				
+				var allsc = document.getElementsByTagName("a");
+				
+				
+				for(var i =0;i < allsc.length;i++){
+					allsc[i].onclick = dela;
+				
+				}
+				
+				myclick("tj",function(){
+					
+					
+					var tableadd = document.getElementById("v1")
+					var tbadd = tableadd.getElementsByTagName("tbody")[0];
+					
+					var nameadd = document.getElementById("empname").value;
+					var mailadd = document.getElementById("email").value;
+					var salaryadd = document.getElementById("salary").value;
+					
+					var tradd =document.createElement("tr")
+					
+					var thnameadd =document.createElement("th")
+					var themailadd =document.createElement("th")
+					var thsalaryadd =document.createElement("th")
+					var thaadd =document.createElement("th")
+					
+					var a =document.createElement("a")
+					
+					var namet=document.createTextNode(nameadd)
+					var mailt=document.createTextNode(mailadd)
+					var salaryt=document.createTextNode(salaryadd )
+					var delt = document.createTextNode("Delete")
+				
+					 
+					a.appendChild(delt);
+					
+					
+							
+					thnameadd.appendChild(namet);
+					themailadd.appendChild(mailt);
+					thsalaryadd.appendChild(salaryt);
+					thaadd.appendChild(a);
+					
+					tradd.appendChild(thnameadd);
+					tradd.appendChild(themailadd);
+					tradd.appendChild(thsalaryadd);
+					tradd.appendChild(thaadd);
+					
+					
+					
+					tbadd.appendChild(tradd);
+					
+					a.href="";
+					
+					a.onclick =dela;
+				
+					
+				})
+				
+			}
+		</script>
+		
+	</head>
+	<body>
+	<div id="a1">	
+		<table id="v1" border="1">
+			<tr class="t1">
+				<th >Name</th>
+				<th>Email</th>
+				<th>Salary</th>
+				<th>     </th>
+			</tr>
+			<tr class="n1">
+				<th id="v1">tom</th>
+				<th>aaa@qq.com</th>
+				<th>300</th>
+				<th><a href="">Delete</a></th>
+			</tr class="t3">
+			<tr>
+				<th id="n2">Aim</th>
+				<th>bbb@qq.com</th>
+				<th>400</th>
+				<th><a href="">Delete</a></th>
+			</tr>
+			<tr>
+				<th id="n3">mailk</th>
+				<th>ccc@qq.com</th>
+				<th>500</th>
+				<th><a href="">Delete</a></th>
+			</tr>		
+		</table>	
+	</div>	
+		<br>
+		<br>
+	<div id="a2">
+		<table id="v2" border="1">
+			添加新员工
+		    <tr>
+				<td>name：</td>
+				<td><textarea id="empname" name="empname"></textarea></td>
+			</tr>
+			<tr>
+				<td>email：</td>
+				<td><textarea id="email" name="email"></textarea></td>
+			</tr>
+			<tr>
+				<td>salary：</td>
+				<td><textarea id="salary" name="salary"></textarea></td>
+			</tr>
+		</table>
+		<button type="submit" id="tj">提交</button>
+		
+	</div>	
+		
+		
+			
+	</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	
+	<script type="text/javascript">
+		window.onload = function(){
+			function Myclick (a,fun){
+				var btn = document.getElementById(a);
+				btn.onclick=fun;
+			}
+			
+			Myclick("qx",function(){
+				var items = document.getElementsByName("admin");
+				for(var i=0 ;i<items.length;i++){
+					items[i].checked = true;
+					ck.checked=true;
+					
+				}
+			})
+			
+			Myclick("qbx",function(){
+				var items = document.getElementsByName("admin");
+				for(var i=0 ;i<items.length;i++){
+					items[i].checked = false;
+					ck.checked=false;
+					
+				}
+			})
+			
+			Myclick("fx",function(){
+				var items = document.getElementsByName("admin");
+				for(var i=0 ;i<items.length;i++){
+					
+					items[i].checked = !items[i].checked;
+					
+					// if(items[i].checked == false){
+					// 	items[i].checked = true;
+					// }else{
+					// 	items[i].checked = false;
+					// }
+					
+				}
+				ck.checked=true;
+				
+				for(var j =0;j<items.length;j++){
+					if(items[j].checked==false){
+						ck.checked=false;
+						
+					}
+				
+								
+				}
+			})
+			
+			Myclick("tj",function(){
+				var items = document.getElementsByName("admin");
+					
+				for(var i =0;i<items.length;i++){
+					if(items[i].checked==true){
+						alert(items[i].value)
+					}
+				}
+				
+			})
+			
+			
+			Myclick("ck",function(){
+				var items = document.getElementsByName("admin");
+				for(var i =0;i<items.length;i++){
+			
+					items[i].checked=this.checked;
+					
+					
+				}
+			})
+			
+			var items = document.getElementsByName("admin");
+			for(var i=0;i<items.length;i++){
+				items[i].onclick =function(){
+					ck.checked=true;
+					
+					for(var j =0;j<items.length;j++){
+						if(items[j].checked==false){
+							ck.checked=false;
+							
+						}
+					
+				
+					}
+				}
+			}
+			
+			
+			
+			
+			
+		}
+		
+		
+		
+	</script>
+	
+	<body>
+		<p>你爱好的运动是？<input type="checkbox" id="ck">全选/全不选</input></p>
+		<input type="checkbox" name="admin" value="足球">足球</input>
+		<input type="checkbox" name="admin" value="篮球">篮球</input>
+		<input type="checkbox" name="admin" value="羽毛球">羽毛球</input>
+		<input type="checkbox" name="admin" value="兵乓球">乒乓球</input>
+		<br>
+		<input type="button" value="全选" id="qx"></input>
+		<input type="button" value="全不选" id="qbx"></input>
+		<input type="button" value="反选" id="fx"></input>
+		<input type="submit" value="提交"  id="tj"></input>
+		
+	</body>
+</html>
+
+
+
+
